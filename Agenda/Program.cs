@@ -8,6 +8,7 @@ namespace Agenda
 {
     static class Program
     {
+        static Form1 app;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -16,7 +17,19 @@ namespace Agenda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            app = new Form1();
+            app.button1.Click += new EventHandler(buttonClick);
+            Application.Run(app);
         }
+
+        static void buttonClick(object sender, EventArgs e)
+        {
+            formulaireEvents formulaireEvents = new formulaireEvents();
+            formulaireEvents.Show();
+
+        }
+
+
     }
 }

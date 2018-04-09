@@ -27,7 +27,7 @@ namespace Agenda
         {
             val = n;
             this.Text = n.ToString();
-            this.Size = new System.Drawing.Size(50, 50);
+            this.Size = new System.Drawing.Size(100, 100);
         }
     }
 }

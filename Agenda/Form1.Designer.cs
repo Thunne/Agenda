@@ -1,4 +1,6 @@
-﻿namespace Agenda
+﻿using System;
+
+namespace Agenda
 {
     partial class Form1
     {
@@ -20,6 +22,8 @@
             base.Dispose(disposing);
         }
 
+        public System.Windows.Forms.Button button1;
+
         #region Code généré par le Concepteur Windows Form
 
         /// <summary>
@@ -31,6 +35,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
 
             //Label1 Date
             this.label1 = new LabelDate(31);
@@ -40,11 +45,22 @@
                 this.flowLayoutPanel1.Controls.Add(this.Labels[i]);
             }
 
-
+            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
 
-           
+
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(197, 137);
+            this.button1.Name = "Nouveau events";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Nouveau events";
+            this.button1.UseVisualStyleBackColor = true;
+
+
             // 
             // flowLayoutPanel1
             // 
