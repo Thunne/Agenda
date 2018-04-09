@@ -31,19 +31,16 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+
             //Label1 Date
             this.label1 = new LabelDate(31);
-            for (int i = 0; i < 30; i++)
+            for (int i = 1; i < 32; i++)
             {
-                this.label1 = new LabelDate(i);
+                this.Labels[i] = new LabelDate(i);
+                this.flowLayoutPanel1.Controls.Add(this.Labels[i]);
             }
 
-            //Label2 Date
-            this.label2 = new LabelDate(31);
-            for (int i = 0; i < 30; i++)
-            {
-                this.label2 = new LabelDate(i);
-            }
+
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
 
@@ -91,7 +88,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private LabelDate[] Labels;
+        private LabelDate[] Labels = new LabelDate[32];
         private System.Windows.Forms.Label label2;
     }
 }
