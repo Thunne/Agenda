@@ -12,19 +12,18 @@ namespace Agenda
 {
     public partial class FormulaireEvents : Form
     {
+        public delegate void ContactListener(Contact c);
+        public ContactListener listener;
         public FormulaireEvents()
         {
             InitializeComponent();
         }
 
-        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Contact c = new Contact(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            listener(c);
+            this.Close();
         }
     }
 }

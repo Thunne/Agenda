@@ -52,11 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="formulaireEvents.cs">
+    <Compile Include="FormulaireEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formulaireEvents.Designer.cs">
-      <DependentUpon>formulaireEvents.cs</DependentUpon>
+    <Compile Include="FormulaireEvents.Designer.cs">
+      <DependentUpon>FormulaireEvents.cs</DependentUpon>
     </Compile>
     <Compile Include="LabelDate.cs">
       <SubType>Component</SubType>
@@ -66,8 +66,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formulaireEvents.resx">
-      <DependentUpon>formulaireEvents.cs</DependentUpon>
+    <EmbeddedResource Include="FormulaireEvents.resx">
+      <DependentUpon>FormulaireEvents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
