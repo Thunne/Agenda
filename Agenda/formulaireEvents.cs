@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace Agenda
 {
-    public partial class formulaireEvents : Form
+    public partial class FormulaireEvents : Form
     {
-        public formulaireEvents()
+        public delegate void ContactListener(Contact c);
+        public ContactListener listener;
+        public FormulaireEvents()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Contact c = new Contact(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            listener(c);
+            this.Close();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Agenda
 {
@@ -23,7 +24,6 @@ namespace Agenda
         }
 
         public System.Windows.Forms.Button button1;
-
         #region Code généré par le Concepteur Windows Form
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Agenda
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-
+            
             //Label1 Date
             this.label1 = new LabelDate(31);
             for (int i = 1; i < 32; i++)
@@ -44,6 +44,7 @@ namespace Agenda
                 this.Labels[i] = new LabelDate(i);
                 this.flowLayoutPanel1.Controls.Add(this.Labels[i]);
             }
+
 
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.SuspendLayout();
@@ -106,6 +107,13 @@ namespace Agenda
         private System.Windows.Forms.Label label1;
         private LabelDate[] Labels = new LabelDate[32];
         private System.Windows.Forms.Label label2;
+
+        public addEvent ()
+        {
+            if(LabelDate[] )
+        }
+
+
     }
 }
 

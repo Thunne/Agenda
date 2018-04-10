@@ -9,24 +9,34 @@ namespace Agenda
     static class Program
     {
         static Form1 app;
+        static FormulaireEvents app2;
+
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
             app = new Form1();
             app.button1.Click += new EventHandler(buttonClick);
+
+            Application.EnableVisualStyles();            
             Application.Run(app);
         }
 
+
+        static void getContact(Contact c)
+        {
+            Label label = new Label();
+            label.Text = c.ToString();
+            app.addEvent(label);
+        }   
+
         static void buttonClick(object sender, EventArgs e)
         {
-            formulaireEvents formulaireEvents = new formulaireEvents();
-            formulaireEvents.Show();
+            app2 = new FormulaireEvents();
+            app2.listener += new FormulaireEvents.ContactListener(getContact);
+            app2.Show();
 
         }
 
