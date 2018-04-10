@@ -45,6 +45,7 @@ namespace Agenda
                 this.flowLayoutPanel1.Controls.Add(this.Labels[i]);
             }
 
+
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();

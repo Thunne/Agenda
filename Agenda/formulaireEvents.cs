@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Agenda
 {
-    public partial class formulaireEvents : Form
+    public partial class FormulaireEvents : Form
     {
-        public formulaireEvents()
+        public FormulaireEvents()
         {
             InitializeComponent();
+        }
+
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
