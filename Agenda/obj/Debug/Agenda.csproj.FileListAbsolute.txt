@@ -8,3 +8,4 @@ C:\Users\janak_000\source\repos\Agenda\Agenda\obj\Debug\Agenda.csproj.GenerateRe
 C:\Users\janak_000\source\repos\Agenda\Agenda\obj\Debug\Agenda.csproj.CoreCompileInputs.cache
 C:\Users\janak_000\source\repos\Agenda\Agenda\obj\Debug\Agenda.exe
 C:\Users\janak_000\source\repos\Agenda\Agenda\obj\Debug\Agenda.pdb
+C:\Users\janak_000\source\repos\Agenda\Agenda\obj\Debug\Agenda.csprojResolveAssemblyReference.cache

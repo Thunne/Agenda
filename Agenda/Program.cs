@@ -29,7 +29,7 @@ namespace Agenda
         {
             Label label = new Label();
             label.Text = c.ToString();
-            app.Controls.Add(label);
+            app.addEvent(label);
         }   
 
         static void buttonClick(object sender, EventArgs e)

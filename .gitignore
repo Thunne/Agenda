@@ -1,9 +1,2 @@
-\.vs/Agenda/v15/\.suo
-\.vs/Agenda/v15/Server/sqlite3/storage\.ide-shm
-Agenda/bin/Debug/Agenda\.exe
-Agenda/bin/Debug/Agenda\.pdb
-Agenda/obj/Debug/Agenda\.csproj\.CoreCompileInputs\.cache
-Agenda/obj/Debug/Agenda\.csproj\.FileListAbsolute\.txt
-Agenda/obj/Debug/Agenda\.csproj\.GenerateResource\.cache
-Agenda/obj/Debug/Agenda\.exe
-Agenda/obj/Debug/Agenda\.pdb
+.vs
+Agenda/bin/Debug/Agenda
