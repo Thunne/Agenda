@@ -21,6 +21,10 @@ namespace Agenda
         {
             string MyConnectionString = "Server=localhost;Database=agenda;Uid=root;Pwd=;";
             this.conn = new MySqlConnection(MyConnectionString);
+            if (!this.conn)
+            {
+                throw new 
+            }
         }
 
         public void addEvent(formulaireEvents task)
