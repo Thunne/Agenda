@@ -21,13 +21,13 @@ namespace Agenda
         {
             string MyConnectionString = "Server=localhost;Database=agenda;Uid=root;Pwd=;";
             this.conn = new MySqlConnection(MyConnectionString);
-            if (!this.conn)
+            /*if (!this.conn)
             {
                 throw new 
-            }
+            }*/
         }
 
-        public void addEvent(formulaireEvents task)
+        public void addEvent(Event task)
         {
             try
             {
@@ -36,11 +36,11 @@ namespace Agenda
                 MySqlCommand cmd = this.conn.CreateCommand();
 
                 cmd.CommandText = "INSERT INTO `event`(`intitule`, `lieux`, `jour`, `heure`, `id_user`) VALUES (@intitule,@lieux,@jour,@heure,@idUser)";
-                cmd.Parameters.AddWithValue("@intitule", task.intitule);
-                cmd.Parameters.AddWithValue("@lieux", task.lieux);
-                cmd.Parameters.AddWithValue("@jour", task.jour);
-                cmd.Parameters.AddWithValue("@heure", task.heure);
-                cmd.Parameters.AddWithValue("@idUser", task.idUser);
+                cmd.Parameters.AddWithValue("@intitule", task.Intitule);
+                cmd.Parameters.AddWithValue("@lieux", task.Lieux);
+                cmd.Parameters.AddWithValue("@jour", task.Jour);
+                cmd.Parameters.AddWithValue("@heure", task.DateHeure);
+                cmd.Parameters.AddWithValue("@idUser", 1);
 
                 cmd.ExecuteNonQuery();
 

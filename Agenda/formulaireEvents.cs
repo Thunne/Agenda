@@ -12,7 +12,7 @@ namespace Agenda
 {
     public partial class FormulaireEvents : Form
     {
-        public delegate void ContactListener(Contact c);
+        public delegate void ContactListener(Event c);
         public ContactListener listener;
         public FormulaireEvents()
         {
@@ -21,8 +21,18 @@ namespace Agenda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Contact c = new Contact(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            Event c = new Event(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            c.Intitule = textBox1.Text;
+            c.Lieux = textBox2.Text;
+            c.Jour = textBox3.Text;
+            c.DateHeure = textBox4.Text;
             listener(c);
+
+            // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
+            FormulaireEventsDAO bdd = new FormulaireEventsDAO();
+            bdd.addEvent(c);
+
+
             this.Close();
         }
     }

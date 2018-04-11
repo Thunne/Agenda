@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Agenda
 {
-   public class Contact 
+   public class Event 
     {
         private string intitule;
         private string lieux;
@@ -18,7 +18,7 @@ namespace Agenda
         public string Jour { get => jour; set => jour = value; }
         public string DateHeure { get => dateHeure; set => dateHeure = value; }
 
-        public Contact(String intitule, String lieux, String jour, String dateHeure)
+        public Event(String intitule, String lieux, String jour, String dateHeure)
         {
             this.intitule = intitule;
             this.lieux = lieux;

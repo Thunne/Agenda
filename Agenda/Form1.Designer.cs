@@ -108,10 +108,10 @@ namespace Agenda
         private LabelDate[] Labels = new LabelDate[32];
         private System.Windows.Forms.Label label2;
 
-        public addEvent ()
+        /*public addEvent ()
         {
             if(LabelDate[] )
-        }
+        }*/
 
 
     }
