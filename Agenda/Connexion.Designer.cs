@@ -1,4 +1,6 @@
-﻿namespace Agenda
+﻿using System.Windows.Forms;
+
+namespace Agenda
 {
     partial class Connexion
     {
@@ -76,6 +78,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Connexion";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Connexion
             // 
@@ -101,5 +104,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
+
+        public Button Button1 { get => button1; set => button1 = value; }
     }
 }

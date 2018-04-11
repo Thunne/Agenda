@@ -16,5 +16,7 @@ namespace Agenda
         {
             InitializeComponent();
         }
+
+        public object Button1 { get; internal set; }
     }
 }
