@@ -108,10 +108,14 @@ namespace Agenda
         private LabelDate[] Labels = new LabelDate[32];
         private System.Windows.Forms.Label label2;
 
+<<<<<<< Updated upstream
         /*public addEvent ()
         {
             if(LabelDate[] )
         }*/
+=======
+        
+>>>>>>> Stashed changes
 
 
     }

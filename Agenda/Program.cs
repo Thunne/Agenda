@@ -25,12 +25,20 @@ namespace Agenda
         }
 
 
+<<<<<<< Updated upstream
         static void getContact(Event c)
         {
             Label label = new Label();
             label.Text = c.ToString();
             //app.addEvent(label);
         }   
+=======
+        static void getContact(Events c)
+        {
+            Label label = new Label();
+            label.Text = c.ToString();
+        }
+>>>>>>> Stashed changes
 
         static void buttonClick(object sender, EventArgs e)
         {
