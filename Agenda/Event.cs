@@ -10,30 +10,26 @@ namespace Agenda
     {
         private string intitule;
         private string lieux;
-        private string jour;
+        private DateTime date;
         private string dateHeure;
 
         public string Intitule { get => intitule; set => intitule = value; }
         public string Lieux { get => lieux; set => lieux = value; }
-        public string Jour { get => jour; set => jour = value; }
         public string DateHeure { get => dateHeure; set => dateHeure = value; }
+        public DateTime Date { get => date; set => date = value; }
 
-        public Event(String intitule, String lieux, String jour, String dateHeure)
+        public Event(String intitule, String lieux, DateTime date, String dateHeure)
         {
             this.intitule = intitule;
             this.lieux = lieux;
-            this.jour = jour;
+            this.date = date;
             this.DateHeure = dateHeure;
         }
 
-        public int getDay()
-        {
-            return int.Parse(jour);
-        }
 
         public override string ToString()
         {
-            return this.intitule + " " + this.lieux;
+            return this.intitule + " " + this.lieux+" "+this.date;
         }
     }
 }
