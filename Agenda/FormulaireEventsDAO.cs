@@ -39,8 +39,8 @@ namespace Agenda
                 cmd.CommandText = "INSERT INTO `event`(`intitule`, `lieux`, `jour`, `heure`, `id_user`) VALUES (@intitule,@lieux,@jour,@heure,@idUser)";
                 cmd.Parameters.AddWithValue("@intitule", task.Intitule);
                 cmd.Parameters.AddWithValue("@lieux", task.Lieux);
-                cmd.Parameters.AddWithValue("@jour", task.Jour);
-                cmd.Parameters.AddWithValue("@heure", task.DateHeure);
+                cmd.Parameters.AddWithValue("@jour", task.Date);
+                cmd.Parameters.AddWithValue("@heure", task.Heure);
                 cmd.Parameters.AddWithValue("@idUser", 1);
 
                 cmd.ExecuteNonQuery();

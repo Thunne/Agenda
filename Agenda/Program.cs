@@ -24,8 +24,6 @@ namespace Agenda
             Application.Run(app);
         }
 
-
-
         static void getContact(Event c)
         {
             app2.addEvent(c);
