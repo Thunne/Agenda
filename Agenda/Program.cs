@@ -8,7 +8,7 @@ namespace Agenda
 {
     static class Program
     {
-        static Connexion app;
+        public static Connexion app;
         static Form1 app2;
         static FormulaireEvents app3;
 
@@ -19,7 +19,6 @@ namespace Agenda
         static void Main()
         {
             app = new Connexion();
-            app.Button1.Click += new EventHandler(buttonClick2);
 
             Application.EnableVisualStyles();            
             Application.Run(app);

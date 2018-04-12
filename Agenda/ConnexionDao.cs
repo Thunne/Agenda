@@ -8,11 +8,11 @@ using MySql.Data.MySqlClient;
 
 namespace Agenda
 {
-    public class FormulaireEventsDAO
+    class ConnexionDAO
     {
         private MySqlConnection conn;
         // Constructeur
-        public FormulaireEventsDAO()
+        public ConnexionDAO()
         {
             this.connSqlDb();
         }
@@ -28,32 +28,7 @@ namespace Agenda
             }
         }
 
-        public void addEvent(Event task)
-        {
-            try
-            {
-                this.conn.Open();
-
-                MySqlCommand cmd = this.conn.CreateCommand();
-
-                cmd.CommandText = "INSERT INTO `event`(`intitule`, `lieux`, `jour`, `heure`, `id_user`) VALUES (@intitule,@lieux,@jour,@heure,@idUser)";
-                cmd.Parameters.AddWithValue("@intitule", task.Intitule);
-                cmd.Parameters.AddWithValue("@lieux", task.Lieux);
-                cmd.Parameters.AddWithValue("@jour", task.Jour);
-                cmd.Parameters.AddWithValue("@heure", task.DateHeure);
-                cmd.Parameters.AddWithValue("@idUser", 1);
-
-                cmd.ExecuteNonQuery();
-
-                this.conn.Close();
-            }
-            catch(BddException e)
-            {
-                e.DisplayError();
-            }
-        }
-
-        public DataSet getData()
+        public DataSet getUser(string pseudo)
         {
             this.conn.Open();
 
@@ -61,14 +36,16 @@ namespace Agenda
             {
                 MySqlCommand cmd = this.conn.CreateCommand();
 
-                cmd.CommandText = "SELECT * FROM event";
+                cmd.CommandText = "SELECT * FROM user WHERE pseudo = 'jdabricot'";
+                //cmd.Parameters.AddWithValue("@pseudo", pseudo);
                 MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adap.Fill(ds);
 
                 this.conn.Close();
                 return ds;
-            } catch (BddException e)
+            }
+            catch (BddException e)
             {
                 throw;
             }
