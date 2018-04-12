@@ -29,9 +29,7 @@ namespace Agenda
 
         static void getContact(Event c)
         {
-            Label label = new Label();
-            label.Text = c.ToString();
-            //app.addEvent(label);
+            app2.addEvent(c);
         }
 
 
@@ -52,6 +50,7 @@ namespace Agenda
         static void buttonClick3(object sender, EventArgs e)
         {
             app3 = new FormulaireEvents();
+            app3.listener += new FormulaireEvents.ContactListener(getContact);
             app3.Show();
         }
 

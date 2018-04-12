@@ -18,5 +18,12 @@ namespace Agenda
         }
 
         public object Button1 { get; internal set; }
+
+        internal void addEvent(Event c)
+        {
+            Label l = new Label();
+            l.Text=  c.ToString();
+            this.Controls.Add(l);
+        }
     }
 }
