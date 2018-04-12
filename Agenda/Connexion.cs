@@ -12,6 +12,10 @@ namespace Agenda
 {
     public partial class Connexion : Form
     {
+        static Form1 app2;
+        static Connexion app;
+        private DataSet userInfo;
+
         public Connexion()
         {
             InitializeComponent();
@@ -24,8 +28,49 @@ namespace Agenda
 
         private void button1_Click(object sender, EventArgs e)
         {
+            User user = new User(textBox1.Text, textBox2.Text);
+            // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
+            ConnexionDAO bdd = new ConnexionDAO();
+            userInfo = bdd.getUser(textBox1.Text);
 
+            if(userInfo.Tables[0].Rows[0][3].Equals(textBox1.Text))
+            {
+                if(userInfo.Tables[0].Rows[0][4].Equals(sha1(textBox2.Text)))
+                {
+                   Program.app.Button1.Click += new EventHandler(buttonClick2);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pseudo ou mot de passe incorrect",
+                    "Erreur",
+                    MessageBoxButtons.RetryCancel,
+                    MessageBoxIcon.Error);
+            }
         }
+
+
+
+        static void buttonClick2(object sender, EventArgs e)
+        {
+            app2 = new Form1();
+            //app2.button1.Click += new EventHandler(buttonClick3);
+            app2.Show();
+        }
+
+        private string sha1(string randomString)
+        {
+            var crypt = new System.Security.Cryptography.SHA1Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
+
+
 
     }
 }
