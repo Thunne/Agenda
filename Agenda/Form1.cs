@@ -23,7 +23,7 @@ namespace Agenda
         {
             Label l = new Label();
             l.Text=  c.ToString();
-            this.Labels[5].Text = c.ToString();
+            this.Labels[c.getDay()].Text += c.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -26,9 +26,14 @@ namespace Agenda
             this.DateHeure = dateHeure;
         }
 
+        public int getDay()
+        {
+            return int.Parse(jour);
+        }
+
         public override string ToString()
         {
-            return this.intitule + " " + this.lieux + this.jour;
+            return this.intitule + " " + this.lieux;
         }
     }
 }
