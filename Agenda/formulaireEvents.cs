@@ -26,7 +26,7 @@ namespace Agenda
             c.Intitule = textBox1.Text;
             c.Lieux = textBox2.Text;
             c.Date = dt;
-            c.DateHeure = textBox4.Text;
+            c.Heure = textBox4.Text;
             listener(c);
 
             // Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL

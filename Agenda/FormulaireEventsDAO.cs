@@ -39,7 +39,7 @@ namespace Agenda
                 cmd.Parameters.AddWithValue("@intitule", task.Intitule);
                 cmd.Parameters.AddWithValue("@lieux", task.Lieux);
                 cmd.Parameters.AddWithValue("@jour", task.Date);
-                cmd.Parameters.AddWithValue("@heure", task.DateHeure);
+                cmd.Parameters.AddWithValue("@heure", task.Heure);
                 cmd.Parameters.AddWithValue("@idUser", 1);
 
                 cmd.ExecuteNonQuery();
