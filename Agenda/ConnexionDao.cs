@@ -50,5 +50,24 @@ namespace Agenda
                 throw;
             }
         }
+
+        public MySqlDataReader getAllUser()
+        {
+            try
+            {
+
+                string mySelectQuery = "SELECT * FROM user";
+
+                MySqlCommand myCommand = new MySqlCommand(mySelectQuery, this.conn);
+                this.conn.Open();
+                MySqlDataReader myReader;
+                myReader = myCommand.ExecuteReader();
+                return myReader;
+            }
+            catch (BddException e)
+            {
+                throw;
+            }
+        }
     }
 }

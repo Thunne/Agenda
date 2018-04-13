@@ -35,6 +35,7 @@ namespace Agenda
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
 
             //Label1 Date
@@ -47,8 +48,19 @@ namespace Agenda
 
 
             this.flowLayoutPanel1.Controls.Add(this.button1);
+
+            //label3 Contact
+            this.label3 = new LabelUser();
+            for (int i = 1; i < 10; i++)
+            {
+                this.LabelsUser[i] = new LabelUser();
+                this.flowLayoutPanel1.Controls.Add(this.LabelsUser[i]);
+            }
+
+
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+
 
 
             // 
@@ -69,7 +81,7 @@ namespace Agenda
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 426);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 600);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -79,6 +91,7 @@ namespace Agenda
             this.label1.Size = new System.Drawing.Size(773, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+
             // 
             // label2
             // 
@@ -87,12 +100,22 @@ namespace Agenda
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
+
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(4, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "test";
+
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 800);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Agenda";
@@ -106,7 +129,9 @@ namespace Agenda
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private LabelDate[] Labels = new LabelDate[32];
+        private LabelUser[] LabelsUser = new LabelUser[10];
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
