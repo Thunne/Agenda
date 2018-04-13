@@ -14,6 +14,7 @@ namespace Agenda
     {
         static Form1 app2;
         static Connexion app;
+        static FormulaireEvents app3;
         private DataSet userInfo;
 
         public Connexion()
@@ -54,8 +55,20 @@ namespace Agenda
         static void buttonClick2(object sender, EventArgs e)
         {
             app2 = new Form1();
-            //app2.button1.Click += new EventHandler(buttonClick3);
+            app2.button1.Click += new EventHandler(buttonClick3);
             app2.Show();
+        }
+
+        static void buttonClick3(object sender, EventArgs e)
+        {
+            app3 = new FormulaireEvents();
+            app3.listener += new FormulaireEvents.ContactListener(getContact);
+            app3.Show();
+        }
+
+        static void getContact(Event c)
+        {
+            app2.addEvent(c);
         }
 
         private string sha1(string randomString)
