@@ -73,5 +73,25 @@ namespace Agenda
                 throw;
             }
         }
+
+        public MySqlDataReader getDataR()
+        {
+            string mySelectQuery = "SELECT * FROM event";
+
+            MySqlCommand myCommand = new MySqlCommand(mySelectQuery, this.conn);
+            this.conn.Open();
+            MySqlDataReader myReader;
+            myReader = myCommand.ExecuteReader();
+            // Always call Read before accessing data.
+            while (myReader.Read())
+            {
+                Console.WriteLine(myReader.GetInt32(0) + ", " + myReader.GetString(1) + ", " + myReader["lieux"] + ", " + myReader.GetMySqlDateTime(3) + ", " + myReader["heure"]);
+            }
+            // always call Close when done reading.
+            myReader.Close();
+            // Close the connection when done with it.
+            this.conn.Close();
+            return myReader;
+        }
     }
 }

@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Agenda
 {
     public partial class Form1 : Form
     {
+        private MySqlDataReader eventInfo;
+
         public Form1()
         {
             InitializeComponent();
+            //Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
+            FormulaireEventsDAO bdd = new FormulaireEventsDAO();
+            eventInfo = bdd.getDataR();
+            Console.Write("****************");
         }
 
         public object Button1 { get; internal set; }

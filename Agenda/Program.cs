@@ -19,7 +19,6 @@ namespace Agenda
         static void Main()
         {
             app = new Connexion();
-
             Application.EnableVisualStyles();            
             Application.Run(app);
         }

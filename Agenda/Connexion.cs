@@ -33,12 +33,13 @@ namespace Agenda
             ConnexionDAO bdd = new ConnexionDAO();
             userInfo = bdd.getUser(textBox1.Text);
 
-            if(userInfo.Tables[0].Rows[0][3].Equals(textBox1.Text))
+            
+            if (!userInfo.Tables[0].Rows.Count.Equals(0) 
+                && userInfo.Tables[0].Rows[0][3].Equals(textBox1.Text) 
+                && userInfo.Tables[0].Rows[0][4].Equals(sha1(textBox2.Text))
+                )
             {
-                if(userInfo.Tables[0].Rows[0][4].Equals(sha1(textBox2.Text)))
-                {
-                   Program.app.Button1.Click += new EventHandler(buttonClick2);
-                }
+                Program.app.Button1.Click += new EventHandler(buttonClick2);
             }
             else
             {
@@ -54,7 +55,6 @@ namespace Agenda
         static void buttonClick2(object sender, EventArgs e)
         {
             app2 = new Form1();
-            //app2.button1.Click += new EventHandler(buttonClick3);
             app2.Show();
         }
 
