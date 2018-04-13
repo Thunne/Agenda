@@ -75,6 +75,9 @@
       <DependentUpon>FormulaireEvents.cs</DependentUpon>
     </Compile>
     <Compile Include="FormulaireEventsDAO.cs" />
+    <Compile Include="LabelUser.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LabelDate.cs">
       <SubType>Component</SubType>
     </Compile>

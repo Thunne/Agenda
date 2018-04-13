@@ -53,44 +53,15 @@ namespace Agenda
             }
         }
 
-        public DataSet getData()
-        {
-            this.conn.Open();
-
-            try
-            {
-                MySqlCommand cmd = this.conn.CreateCommand();
-
-                cmd.CommandText = "SELECT * FROM event";
-                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adap.Fill(ds);
-
-                this.conn.Close();
-                return ds;
-            } catch (BddException e)
-            {
-                throw;
-            }
-        }
-
         public MySqlDataReader getDataR()
         {
-            string mySelectQuery = "SELECT * FROM event";
+            string mySelectQuery = "SELECT * FROM event e INNER JOIN user u ON e.id_user = u.id";
 
             MySqlCommand myCommand = new MySqlCommand(mySelectQuery, this.conn);
             this.conn.Open();
             MySqlDataReader myReader;
             myReader = myCommand.ExecuteReader();
-            // Always call Read before accessing data.
-            while (myReader.Read())
-            {
-                Console.WriteLine(myReader.GetInt32(0) + ", " + myReader.GetString(1) + ", " + myReader["lieux"] + ", " + myReader.GetMySqlDateTime(3) + ", " + myReader["heure"]);
-            }
-            // always call Close when done reading.
-            myReader.Close();
             // Close the connection when done with it.
-            this.conn.Close();
             return myReader;
         }
     }

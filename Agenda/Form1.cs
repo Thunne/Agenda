@@ -14,6 +14,7 @@ namespace Agenda
     public partial class Form1 : Form
     {
         private MySqlDataReader eventInfo;
+        private MySqlDataReader userInfo;
 
         public Form1()
         {
@@ -21,7 +22,23 @@ namespace Agenda
             //Création de l'objet Bdd pour l'intéraction avec la base de donnée MySQL
             FormulaireEventsDAO bdd = new FormulaireEventsDAO();
             eventInfo = bdd.getDataR();
-            Console.Write("****************");
+            
+            while (eventInfo.Read())
+            {
+                Label l = new Label();
+                this.Labels[eventInfo.GetMySqlDateTime(3).Day].Text += "\n" + eventInfo.GetString(1) + "\n" + eventInfo["lieux"] + "\n" + eventInfo.GetMySqlDateTime(3) + " " + eventInfo["heure"] + "\n" + eventInfo["prenom"];
+            }
+            //Close la connexion sql
+            eventInfo.Close();
+
+            ConnexionDAO bddUser = new ConnexionDAO();
+            userInfo = bddUser.getAllUser();
+
+            while (userInfo.Read())
+            {
+                Label user = new Label();
+                this.LabelsUser[userInfo.GetInt32(0)].Text += "nom = " + userInfo.GetString(1) + "\nprenom = " +  userInfo.GetString(2);
+            }
         }
 
         public object Button1 { get; internal set; }
